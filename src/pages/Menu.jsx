@@ -294,14 +294,14 @@ export default function Menu() {
 
           {/* Restaurant identity overlay — centre of mosaic */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="text-center px-6 py-4 bg-forest-950/60 backdrop-blur-sm border border-cream-100/10">
+            <div className="text-center px-8 py-5 bg-forest-950/85 backdrop-blur-md border border-cream-100/20">
               <p className="text-[10px] text-terracotta-300 tracking-[0.35em] uppercase font-sans mb-1">
                 Plant-Based Fine Dining
               </p>
-              <h1 className="font-serif text-2xl md:text-3xl text-cream-100 tracking-[0.15em]">
+              <h1 className="font-serif text-2xl md:text-3xl text-cream-50 tracking-[0.15em] drop-shadow-lg">
                 GROUNDED
               </h1>
-              <p className="text-[10px] text-cream-400 tracking-[0.25em] uppercase font-sans mt-1">
+              <p className="text-[10px] text-cream-300 tracking-[0.25em] uppercase font-sans mt-1">
                 East Nashville · Est. 2024
               </p>
             </div>
