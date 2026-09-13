@@ -278,7 +278,7 @@ export default function Menu() {
         <div className="absolute inset-0 bg-gradient-to-b from-forest-950/80 to-forest-900/60" />
 
         {/* Cipriani-style photo mosaic */}
-        <div className="relative z-10 grid grid-cols-3 md:grid-cols-6 h-48 md:h-72">
+        <div className="relative z-10 grid grid-cols-3 md:grid-cols-6 h-36 md:h-48">
           {mosaicPhotos.map(({ src, label }) => (
             <div key={label} className="relative overflow-hidden group">
               <DishImage
@@ -298,7 +298,7 @@ export default function Menu() {
               <p className="text-[10px] text-terracotta-300 tracking-[0.35em] uppercase font-sans mb-1">
                 Plant-Based Fine Dining
               </p>
-              <h1 className="font-serif text-3xl md:text-5xl text-cream-100 tracking-[0.15em]">
+              <h1 className="font-serif text-2xl md:text-3xl text-cream-100 tracking-[0.15em]">
                 GROUNDED
               </h1>
               <p className="text-[10px] text-cream-400 tracking-[0.25em] uppercase font-sans mt-1">
@@ -309,31 +309,24 @@ export default function Menu() {
         </div>
 
         {/* Title overlay */}
-        <div className="relative z-10 bg-forest-900/90 py-10 px-6 text-center">
-          <p className="section-label text-terracotta-300 mb-3">Seasonal Menu</p>
-          <h1 className="font-serif text-5xl md:text-6xl text-cream-100 mb-3">The Menu</h1>
-          <p className="text-cream-300 text-sm max-w-md mx-auto leading-relaxed mb-6">
-            Written by Marcus every Sunday. All prices in USD. Everything plant-based.
-            Nothing is an apology.
-          </p>
+        <div className="relative z-10 bg-forest-900/90 py-4 px-6 text-center">
+          <p className="section-label text-terracotta-300">Seasonal Menu</p>
+          <h1 className="font-serif text-3xl md:text-4xl text-cream-100">The Menu</h1>
         </div>
 
-        {/* Scroll indicator — sits on the bottom edge of the hero */}
+        {/* Scroll arrow — fixed to bottom-right */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="relative z-10 flex flex-col items-center gap-2 pb-6 pt-2"
+          className="absolute bottom-4 right-6 z-20 flex flex-col items-center gap-1"
         >
-          <span className="text-[9px] text-cream-500 tracking-[0.35em] uppercase font-sans">
-            Scroll to explore
-          </span>
-          {/* Animated double-chevron arrow */}
+          <span className="text-[8px] text-cream-500 tracking-[0.3em] uppercase font-sans">Scroll</span>
           <div className="flex flex-col items-center gap-0.5">
             {[0, 1, 2].map(i => (
               <motion.svg
                 key={i}
-                width="18" height="10" viewBox="0 0 18 10" fill="none"
+                width="16" height="9" viewBox="0 0 18 10" fill="none"
                 animate={{ opacity: [0.2, 1, 0.2], y: [0, 3, 0] }}
                 transition={{ repeat: Infinity, duration: 1.4, delay: i * 0.18, ease: 'easeInOut' }}
               >
@@ -345,7 +338,7 @@ export default function Menu() {
       </section>
 
       {/* ── Chef's Note ── */}
-      <div className="bg-cream-200 py-8 px-6 text-center">
+      <div className="bg-cream-200 py-5 px-6 text-center">
         <div className="max-w-xl mx-auto">
           <MilitaryStar className="w-5 h-5 text-terracotta-400 mx-auto mb-3" />
           <p className="font-serif italic text-forest-700 text-base md:text-lg leading-relaxed">
