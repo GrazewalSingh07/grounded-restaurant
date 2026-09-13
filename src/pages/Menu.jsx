@@ -316,18 +316,32 @@ export default function Menu() {
             Written by Marcus every Sunday. All prices in USD. Everything plant-based.
             Nothing is an apology.
           </p>
-          {/* Scroll hint */}
-          <motion.div
-            animate={{ y: [0, 6, 0] }}
-            transition={{ repeat: Infinity, duration: 1.8 }}
-            className="flex flex-col items-center gap-1 text-cream-500 mx-auto w-fit"
-          >
-            <span className="text-[9px] tracking-[0.3em] uppercase">Scroll to explore</span>
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="opacity-60">
-              <path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </motion.div>
         </div>
+
+        {/* Scroll indicator — sits on the bottom edge of the hero */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+          className="relative z-10 flex flex-col items-center gap-2 pb-6 pt-2"
+        >
+          <span className="text-[9px] text-cream-500 tracking-[0.35em] uppercase font-sans">
+            Scroll to explore
+          </span>
+          {/* Animated double-chevron arrow */}
+          <div className="flex flex-col items-center gap-0.5">
+            {[0, 1, 2].map(i => (
+              <motion.svg
+                key={i}
+                width="18" height="10" viewBox="0 0 18 10" fill="none"
+                animate={{ opacity: [0.2, 1, 0.2], y: [0, 3, 0] }}
+                transition={{ repeat: Infinity, duration: 1.4, delay: i * 0.18, ease: 'easeInOut' }}
+              >
+                <path d="M2 2l7 6 7-6" stroke="#7A9E8E" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </motion.svg>
+            ))}
+          </div>
+        </motion.div>
       </section>
 
       {/* ── Chef's Note ── */}
